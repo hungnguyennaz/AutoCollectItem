@@ -1,0 +1,4 @@
+SmeltItem:
+ Enable:
+  KillMob: false
+  BreakBlock: true

@@ -1,0 +1,3 @@
+name: AutoCollectItem
+main: me.thinh_geographical.autocollect.AutoCollect
+version: 0.25
