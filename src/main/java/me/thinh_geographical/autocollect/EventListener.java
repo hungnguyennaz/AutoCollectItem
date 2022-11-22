@@ -24,6 +24,7 @@ import org.bukkit.event.player.PlayerFishEvent;
 import org.bukkit.event.player.PlayerFishEvent.State;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.metadata.FixedMetadataValue;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 
@@ -37,7 +38,7 @@ public class EventListener implements Listener {
       List<ItemStack> list = event.getDrops();
       Player p = e.getKiller();
 
-      Inventory in = p.getInventory();
+      PlayerInventory in = p.getInventory();
 
       for (ItemStack item : list) {
          if (!this.hasenchant1_11 || !item.containsEnchantment(Enchantment.VANISHING_CURSE)) {
