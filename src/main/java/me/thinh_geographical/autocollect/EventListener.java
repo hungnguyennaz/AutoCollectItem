@@ -25,19 +25,17 @@ import org.bukkit.event.player.PlayerFishEvent.State;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.metadata.FixedMetadataValue;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 
 public class EventListener implements Listener {
    private boolean hasenchant1_11 = Enchantment.getByName("VANISHING_CURSE") != null;
-   private Map<String, BlockAndTime> check = new HashMap<>();
+   private Map<String, BlockAndTime> check = new Object2ObjectOpenHashMap<>();
 
    @EventHandler
    public void onDeath(EntityDeathEvent event) {
       LivingEntity e = event.getEntity();
       List<ItemStack> list = event.getDrops();
       Player p = e.getKiller();
-      if (e.getKiller() != null) {
-         p = e.getKiller();
-      }
 
       Inventory in = p.getInventory();
 
